@@ -1,0 +1,11 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate template for webprojects",
+  "main": "index.js",
+  "author": "Patrick Sherlock",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
