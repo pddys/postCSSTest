@@ -4,5 +4,19 @@
   "description": "Boilerplate template for webprojects",
   "main": "index.js",
   "author": "Patrick Sherlock",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pddys/boilerplate2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pddys/boilerplate2/issues"
+  },
+  "homepage": "https://github.com/pddys/boilerplate2#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
 }
