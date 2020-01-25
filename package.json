@@ -4,8 +4,5 @@
   "description": "Boilerplate template for webprojects",
   "main": "index.js",
   "author": "Patrick Sherlock",
-  "license": "MIT",
-  "devDependencies": {
-    "gulp": "^4.0.2"
-  }
+  "license": "MIT"
 }
