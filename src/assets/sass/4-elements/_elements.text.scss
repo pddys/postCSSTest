@@ -1,0 +1,148 @@
+/* ==========================================================================
+   #TEXT ELEMENTS
+   ========================================================================== */
+
+// This file shouldn't contain any classes. These are all default styles for standard page elements
+
+// Paragraphs
+p {
+    margin: 0 0 1.25em 0;
+    line-height: 1.5;
+}
+
+// Anchor tags
+a {
+    color: inherit;
+    text-decoration: underline;
+    @include transition;
+}
+a, :-moz-any-link:focus { outline: none;}
+
+
+// Blockquotes
+blockquote {
+    margin: 1em 0 2em 1em;
+    padding-left: 2em;
+    border-left: 2px solid $grey;
+}
+
+
+// Default list styles (needed if you use reset.scss)
+ul, ol, dl {
+    margin: 1em 0 2em 1.5em;
+    padding-left: 1em;
+    list-style-type: disc;
+    li, dt, dd {
+        line-height: 1.25em;
+        margin-bottom: 0.5em;
+    }
+    ul, ol, dl {
+        list-style-type: circle;
+    }
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+// Table
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 4px;
+    font-size: 95%;
+    margin-bottom: 30px;
+    caption {
+        margin-bottom: 6px;
+        text-align: left;
+        font-size: 0.85em;
+    }
+    td {
+        padding: 10px;
+        vertical-align: center;
+    }
+    th {
+        @include font-bold;
+        text-align: left;
+        padding: 14px 10px;
+        vertical-align: center;
+        border-bottom: 2px solid $primary;
+    }
+    @include mq(desktop) {
+        margin-bottom: 60px;
+    }
+}
+
+// Code
+kbd, code, samp, pre {
+    background: $off-white;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 4px;
+}
+
+pre {
+    overflow: scroll;
+    font-size: 80%;
+    line-height: 1.25em;
+    padding: 3%;
+    margin-bottom: 1.25em;
+}
+
+
+// Inline elements
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+i {
+    font-style: italic;
+}
+
+b {
+    font-weight: bold;
+}
+
+small {
+    font-size: 0.75em;
+}
+
+q {
+    quotes: inherit;
+    &:before {
+        content: open-quote;
+    }
+    &:after {
+        content: close-quote;
+    }
+}
+
+cite {
+    font-weight: bold;
+}
+
+dfn {
+    font-weight: bold;
+}
+
+var {
+    font-style: italic;
+}
+
+time {
+    font-weight: bold;
+}
+
+// Images
+
+figure {
+    margin-bottom: 3%;
+}
+
+figcaption {
+    font-size: 0.75em;
+}

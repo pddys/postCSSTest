@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #COLOUR CLASSES
+   ========================================================================== */
+
+
+// Background colours as classes
+.u-bg--off-white {
+    background-color: $off-white!important;
+}
+.u-bg--primary {
+    background-color: $primary!important;
+}
+.u-bg--secondary {
+    background-color: $secondary!important;
+}
+.u-bg--tertiary {
+    background-color: $tertiary!important;
+}
+
+// Text colours as classes
+.u-text--primary {
+    color: $primary!important;
+}
+.u-text--secondary {
+    color: $secondary!important;
+}
+.u-text--tertiary {
+    color: $tertiary!important;
+}
+.u-text--white {
+    color: $white!important;
+}
+.u-text--black {
+    color: $black!important;
+}
+.u-text--grey {
+    color: $grey!important;
+}
+
+
+//
+// Block background colours with complimentary text defaults
+//
+// e.g. outputs .u-black-bg
+
+@each $background in $backgrounds {
+    .u-#{"" + nth($background, 1)}-bg {
+        @each $property in nth($background, 2) {
+            #{"" + nth($property, 1)}: nth($property, 2) !important;
+        }
+    }
+
+    .c-container.u-#{"" + nth($background, 1)}-bg + .c-container.u-#{"" + nth($background, 1)}-bg {
+        padding-top: 0;
+    }
+}
+
+//
+// Text colour overrides
+//
+// e.g. outputs .u-black-txt
+
+@each $color in $colors {
+	.u-#{"" + nth($color, 1)}-txt {
+		color: nth($color, 2) !important;
+	}
+}

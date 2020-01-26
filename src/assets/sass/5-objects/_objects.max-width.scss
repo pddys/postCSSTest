@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #MAX WIDTHS
+   ========================================================================== */
+
+// Loops through various widths to create classes for max-widths
+
+$widths: 400, 500, 600, 700, 800, 900, 1000;
+@each $width in $widths {
+    .o-max-#{$width} {
+        max-width: $width + px;
+    }
+}
+// If you need your max-width element to be centred, add a class of block--centred
+.o-block--centred {
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,0 +1,26 @@
+/* ==========================================================================
+   #MAX WIDTHS
+   ========================================================================== */
+
+// Lightweight approach to splitting two columns in to halves at various breakpoints
+
+// Split them in half
+.o-put--left, .o-put--right {
+    @include inline-block(middle, 50%);
+}
+
+@include mq(tablet) {
+    .o-put--left--tablet, .o-put--right--tablet {
+        @include inline-block(middle, 50%);
+    }
+}
+@include mq(desktop) {
+    .o-put--left--desktop, .o-put--right--desktop {
+        @include inline-block(middle, 50%);
+    }
+}
+@include mq(wide) {
+    .o-put--left--wide, .o-put--right--wide {
+        @include inline-block(middle, 50%);
+    }
+}

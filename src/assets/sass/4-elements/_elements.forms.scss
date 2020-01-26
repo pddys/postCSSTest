@@ -1,0 +1,99 @@
+/* ==========================================================================
+   #FORMS
+   ========================================================================== */
+
+// Form Components
+
+legend {
+    margin-bottom: 1em;
+}
+
+label, .label {
+    font-size: 90%;
+    margin-bottom: 0;
+    display: block;
+}
+
+input {
+    border: 1px solid $grey;
+}
+
+// Styles for fields (excluding buttons, checkboxes etc)
+input[type="text"], input[type="email"], input[type="tel"], input[type="password"], input[type="search"], input[type="url"], select {
+    width: 100%;
+    max-width: 600px;
+    height: $field-height-mobile;
+    padding-left: 6px;
+
+    &:focus {
+        border: 0;
+        @include vendor(box-shadow, 0px 0px 14px 0px rgba(0,0,0,0.27));
+    }
+
+    @include mq(desktop) {
+        height: $field-height-desk;
+        padding-left: 10px;
+        &.filed--large {
+            height: $field-height-large;
+        }
+    }
+}
+
+input[type="number"], input[type="date"], input[type="month"], input[type="week"], input[type="datetime"], input[type="datetime-local"] {
+    padding-left: 6px;
+    height: $field-height-mobile;
+    &:focus {
+        border: 0;
+        @include vendor(box-shadow, 0px 0px 14px 0px rgba(0,0,0,0.27));
+    }
+    @include mq(desktop) {
+        height: $field-height-desk;
+        padding-left: 10px;
+        &.filed--large {
+            height: $field-height-large;
+        }
+    }
+}
+
+select {
+    background: white;
+    max-width: 600px;
+    color: $grey;
+    border: 1px solid $grey;
+}
+
+textarea {
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid $grey;
+    padding: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"],
+button[type="submit"], button[type="button"], button[type="reset"] {
+    font-size: 90%;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 1%;
+    background: $primary;
+    color: $white;
+    height: $field-height-mobile;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+    &:disabled {
+        opacity: 0.4;
+        cursor: default;
+    }
+    @include mq(desktop) {
+        height: $field-height-desk;
+            padding-left: 20px;
+            padding-right: 20px;
+    }
+}

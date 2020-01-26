@@ -1,0 +1,87 @@
+///* ========================================================================
+//   #COLOURS
+//   ======================================================================== */
+// The list of colour variables used globally across the project
+
+
+//
+// Project Colours as variables
+//
+$primary: #000000;
+$secondary: #FFFFFF;
+$tertiary: #54777B;
+$highlight: #542537;
+
+//
+// Project Colour as Array
+//
+$colors: (
+    primary: #000000,
+	secondary: #FFFFFF,
+	tertiary: #54777B,
+	highlight: #542537,
+    black: #000000,
+    white: #FFFFFF
+);
+
+//
+// Colour Helper Function
+//
+@function color($key) { // use e.g. color(navy) to refer to color hex values
+    @return map-get($colors, $key);
+}
+
+//
+// White/Black
+//
+$white: #ffffff;
+$black: #000000;
+$off-white: #F3F2ED;
+$off-black: #404040;
+
+//
+// Greys
+//
+$grey: #808080;
+$grey--lightest: #e6e6e6;
+$grey--lighter: #ECF0F1;
+$grey--light: #ECF0F1;
+$grey--dark: #4A4A4A;
+$grey--darker: #666666;
+$grey--darkest: #4d4d4d;
+
+//
+// Warnings
+//
+$warning: #D95B43;
+$error: #C02942;
+$success: #54777B;
+
+
+//
+// Social Colours
+//
+$twitter: #00aced;
+$facebook: #3b5998;
+$youtube: #bb0000;
+$instagram: #517fa4;
+$linkedin: #007bb6;
+
+
+//
+// Background Colour Array
+//
+
+// use to apply complimentary text colours to each background
+// used in 7-utlities/colour-classes
+
+$backgrounds: (
+    white: (
+        background-color: color(white),
+        color: color(black)
+    ),
+    black: (
+        background-color: color(black),
+        color: color(white)
+    )
+);

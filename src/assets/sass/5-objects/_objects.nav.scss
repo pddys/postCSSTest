@@ -1,0 +1,31 @@
+///* ========================================================================
+//   #DEAFULT LIST
+//   ======================================================================== */
+
+// Class for default nav list
+
+.o-nav {
+    padding-left: 0;
+    margin-left: 0;
+
+    li {
+        display: inline-block;
+        list-style: none;
+        margin: 0 5px;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &.o-nav--stacked {
+        li {
+            display: block;
+            margin: 0;
+        }
+    }
+}

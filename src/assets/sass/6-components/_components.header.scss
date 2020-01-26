@@ -1,0 +1,19 @@
+/* ==========================================================================
+   #GLOBL HEADER styles
+   ========================================================================== */
+
+$header-height-mobile: 100px;
+$header-height-tablet: 100px;
+$header-height-desktop: 100px;
+
+.c-global-header {
+    width: 100%;
+    background-color: $primary;
+}
+
+.c-company-logo {
+    background-image: url('../images/substrakt-white.svg');
+    background-repeat: no-repeat;
+    width: 165px;
+    height: 85px;
+}

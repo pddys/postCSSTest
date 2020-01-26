@@ -1,0 +1,160 @@
+///* ========================================================================
+//   #HELPERS
+//   ======================================================================== */
+
+// Combination of mixins that will help speed up common tasks
+
+///* ========================================================================
+//   #BACKGROUND COVER
+//   ======================================================================== */
+
+// Covers an image within the background, positions it int he centre
+@mixin bgd-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+///* ========================================================================
+//   #BLUR
+//   ======================================================================== */
+
+// Mixin to create css blur
+// You can specify blur distance
+
+@mixin blur($blur:5px) {
+  -webkit-filter: blur($blur);
+  -moz-filter: blur($blur);
+  -o-filter: blur($blur);
+  -ms-filter: blur($blur);
+  filter: blur($blur);
+}
+
+
+///* ========================================================================
+    //   #CLEARFIX
+//   ======================================================================== */
+
+
+@mixin inuit-clearfix() {
+
+  &:after {
+    content: "" !important;
+    display: block !important;
+    clear: both !important;
+  }
+}
+
+///* ========================================================================
+//   #DROP SHADOW
+//   ======================================================================== */
+
+// Mixin to create drop shadow
+// You can specify spread and the opacity
+
+// Drop Shadow
+@mixin drop-shadow($spread:20px, $opacity:0.4) {
+    -webkit-box-shadow: 0 0 $spread 0 rgba(0,0,0,$opacity);
+    box-shadow: 0 0 $spread 0 rgba(0,0,0,$opacity);
+}
+
+
+///* ========================================================================
+//   #GRADIENT
+//   ======================================================================== */
+
+// Creates a black to transparent gradient
+
+@mixin gradient--top($height: 30px, $opacity: 0.8) {
+    display: block;
+    content: '';
+    width: 100%;
+    height: $height;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,$opacity) 0%, rgba(0,0,0,0) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,$opacity)), color-stop(100%,rgba(0,0,0,0)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,$opacity) 0%,rgba(0,0,0,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33000000', endColorstr='#00000000',GradientType=0 );
+}
+
+@mixin gradient--bottom($height: 30px, $opacity: 0.8) {
+    display: block;
+    content: '';
+    width: 100%;
+    height: $height;
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,$opacity) 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,$opacity)));
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+    background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+    background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,$opacity) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#000000',GradientType=0 );
+}
+
+///* ========================================================================
+//   #HIDDEN-VISUALLY
+//   ======================================================================== */
+
+// Mixin to quickly apply accessible hiding to elements.
+@mixin inuit-hidden-visually() {
+  border: 0 !important;
+  clip: rect(0 0 0 0) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+
+
+///* ========================================================================
+//   #INLINE-BLOCK
+//   ======================================================================== */
+
+// Simple mixin to display elements as inline block. You can specify vertical position and widths
+
+@mixin inline-block( $position:top, $width:auto ) {
+    display: inline-block;
+    vertical-align: $position;
+    width: $width;
+}
+
+
+
+///* ========================================================================
+//   #TRANSITIONS
+//   ======================================================================== */
+
+// Mixin to create transitions
+
+@mixin transition($prop:all, $dur:250ms, $type:ease-in-out) {
+    -webkit-transition: $prop $dur $type;
+    -moz-transition: $prop $dur $type;
+    -ms-transition: $prop $dur $type;
+    -o-transition: $prop $dur $type;
+    transition: $prop $dur $type;
+}
+
+///* ========================================================================
+//   #VENDOR
+//   ======================================================================== */
+
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(border-radius, 4px);`
+ *
+ */
+@mixin vendor($property, $value...){
+    -webkit-#{$property}:$value;
+       -moz-#{$property}:$value;
+        -ms-#{$property}:$value;
+         -o-#{$property}:$value;
+            #{$property}:$value;
+}
