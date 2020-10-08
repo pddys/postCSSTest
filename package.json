@@ -20,8 +20,13 @@
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.2.0",
+    "gulp-postcss": "^9.0.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.13.1",
+    "postcss-preset-env": "^6.7.0"
+  },
+  "dependencies": {
+    "postcss-scss": "^3.0.2"
   }
 }

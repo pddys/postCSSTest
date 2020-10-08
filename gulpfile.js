@@ -12,6 +12,8 @@ var sass = require('gulp-sass');
 var cleanCSS = require('gulp-clean-css');
 var sourcemaps = require('gulp-sourcemaps');
 var browserSync = require('browser-sync').create();
+const postcss = require('gulp-postcss');
+const postcssPresetEnv = require('postcss-preset-env');
 
 // Must have values, don't use leading or trailing slashes.
 const dirs = {
@@ -40,7 +42,7 @@ const paths = {
     dest: `${dirs.output}/assets/media`,
   },
   sass: {
-    src: `${dirs.entry}/assets/**/*.+(css|scss)`,
+    src: `${dirs.entry}/assets/*.+(css|scss)`,
     dest: `${dirs.output}/assets/css`,
   },
   js: {
@@ -89,9 +91,12 @@ gulp.task('sass', function () {
   // compile src/assets/sass into build/css
   return gulp.src(paths.sass.src)
 	.pipe(sourcemaps.init())
-	.pipe(sass().on('error', sass.logError))
 	.pipe(cleanCSS(...pluginConfig.cleanCSS))
-	.pipe(sourcemaps.write())
+  .pipe(
+    postcss([
+      postcssPresetEnv(/* pluginOptions */)
+    ])
+  )
 	.pipe(gulp.dest(paths.sass.dest))
 	.pipe(browserSync.stream());
 });
